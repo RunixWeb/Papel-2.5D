@@ -5,7 +5,7 @@ extends Node
 @onready var open_dialog = $"../import"
 @onready var contenedor = $"../../SubViewportContainer/SubViewport/SCENE"
 
-@onready var apilador_objetos = $"../Apilador de objetos"
+@onready var apilador_objetos = $"../PanelConScroll/Apilador de objetos"
 
 @export var sprite_scene : PackedScene
 @export var objeto_nuevo : PackedScene

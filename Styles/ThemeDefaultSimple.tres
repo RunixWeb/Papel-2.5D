@@ -15,6 +15,12 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2veoj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kirs8"]
+bg_color = Color(0.078431375, 0.0627451, 0.07450981, 0.78431374)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.078431375, 0.0627451, 0.07450981, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dea62"]
 
@@ -25,10 +31,30 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q7ygx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fh7ix"]
+bg_color = Color(0.078431375, 0.0627451, 0.07450981, 0.78431374)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.078431375, 0.0627451, 0.07450981, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7yvx1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6ke7"]
+bg_color = Color(0.078431375, 0.0627451, 0.07450981, 0.78431374)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.078431375, 0.0627451, 0.07450981, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8bq1"]
+bg_color = Color(0.078431375, 0.0627451, 0.07450981, 0.78431374)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.078431375, 0.0627451, 0.07450981, 1)
 
 [sub_resource type="DPITexture" id="DPITexture_vymhw"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"8\"><path fill=\"none\" stroke=\"#fff\" stroke-width=\"2\" d=\"m12 2-4 3.5L4 2\"/></svg>
@@ -76,6 +102,7 @@ LineEdit/styles/focus = SubResource("StyleBoxFlat_q7ygx")
 LineEdit/styles/normal = SubResource("StyleBoxFlat_fh7ix")
 LineEdit/styles/read_only = SubResource("StyleBoxFlat_7yvx1")
 Panel/styles/panel = SubResource("StyleBoxFlat_i6ke7")
+ScrollContainer/styles/panel = SubResource("StyleBoxFlat_a8bq1")
 SpinBox/colors/down_disabled_icon_modulate = Color(0.875, 0.875, 0.875, 0.5)
 SpinBox/colors/down_hover_icon_modulate = Color(0.95, 0.95, 0.95, 1)
 SpinBox/colors/down_icon_modulate = Color(0.875, 0.875, 0.875, 1)
