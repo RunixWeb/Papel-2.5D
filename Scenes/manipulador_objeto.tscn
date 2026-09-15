@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://oevlc44wxeoi"]
+
+[ext_resource type="Script" uid="uid://dsgalx1ltbsym" path="res://Code/manipulador_objeto.gd" id="1_wnf35"]
+[ext_resource type="Theme" uid="uid://2oddwrphxrhp" path="res://Styles/ThemeDefaultSimple.tres" id="2_8c7xv"]
+
+[node name="Manipulador" type="VBoxContainer" unique_id=928199449]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_wnf35")
+
+[node name="Nombre_objeto" type="Label" parent="." unique_id=264274626]
+layout_mode = 2
+text = "Objeto"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1333878522]
+layout_mode = 2
+
+[node name="modificador_x" type="SpinBox" parent="HBoxContainer" unique_id=916470953]
+layout_mode = 2
+theme = ExtResource("2_8c7xv")
+step = 0.1
+allow_greater = true
+allow_lesser = true
+prefix = "px"
+
+[node name="modificador_y" type="SpinBox" parent="HBoxContainer" unique_id=1379629693]
+layout_mode = 2
+theme = ExtResource("2_8c7xv")
+step = 0.1
+allow_greater = true
+allow_lesser = true
+prefix = "py"
+
+[node name="modificador_z" type="SpinBox" parent="HBoxContainer" unique_id=1481526429]
+layout_mode = 2
+theme = ExtResource("2_8c7xv")
+step = 0.1
+allow_greater = true
+allow_lesser = true
+prefix = "pz"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="." unique_id=186447777]
+layout_mode = 2
+
+[node name="rotacion_x" type="SpinBox" parent="HBoxContainer3" unique_id=1363034315]
+layout_mode = 2
+theme = ExtResource("2_8c7xv")
+step = 0.1
+allow_greater = true
+allow_lesser = true
+prefix = "rx"
+
+[node name="rotacion_y" type="SpinBox" parent="HBoxContainer3" unique_id=995936893]
+layout_mode = 2
+theme = ExtResource("2_8c7xv")
+step = 0.1
+allow_greater = true
+allow_lesser = true
+prefix = "ry"
+
+[node name="rotacion_z" type="SpinBox" parent="HBoxContainer3" unique_id=1807071508]
+layout_mode = 2
+theme = ExtResource("2_8c7xv")
+step = 0.1
+allow_greater = true
+allow_lesser = true
+prefix = "rz"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1858284118]
+layout_mode = 2
+
+[node name="aplicar" type="Button" parent="HBoxContainer2" unique_id=1194187064]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_8c7xv")
+text = "Aplicar cambios"
+
+[node name="eliminar" type="Button" parent="HBoxContainer2" unique_id=1590286606]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_8c7xv")
+text = "Eliminar objeto"
+
+[connection signal="pressed" from="HBoxContainer2/aplicar" to="." method="_on_aplicar_pressed"]
+[connection signal="pressed" from="HBoxContainer2/eliminar" to="." method="_on_eliminar_pressed"]

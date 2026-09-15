@@ -1,0 +1,175 @@
+[gd_scene format=3 uid="uid://bf5phigjv1khf"]
+
+[ext_resource type="Script" uid="uid://0g3k33k38gu8" path="res://Code/logica_de_obtencion.gd" id="1_2lvdd"]
+[ext_resource type="Script" uid="uid://m1owtykpcpmv" path="res://Code/camara2D.gd" id="1_cfvru"]
+[ext_resource type="PackedScene" uid="uid://d3gx4mm52xb2t" path="res://Scenes/Objeto.tscn" id="2_30qx8"]
+[ext_resource type="Script" uid="uid://r83ayd67mavt" path="res://Code/logica_de_captura.gd" id="2_didxl"]
+[ext_resource type="Script" uid="uid://bb3ue0e2rmc2n" path="res://Code/modificador_viewport.gd" id="3_o3y7d"]
+[ext_resource type="PackedScene" uid="uid://oevlc44wxeoi" path="res://Scenes/manipulador_objeto.tscn" id="3_sx3p0"]
+[ext_resource type="Theme" uid="uid://2oddwrphxrhp" path="res://Styles/ThemeDefaultSimple.tres" id="6_deua1"]
+[ext_resource type="Script" uid="uid://cmdnrvg1fjdmv" path="res://Code/principales.gd" id="7_deua1"]
+[ext_resource type="Shader" uid="uid://dfyxp8bq2nnao" path="res://Efectos/Efecto0.gdshader" id="9_deua1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xtgv7"]
+shader = ExtResource("9_deua1")
+shader_parameter/intensidad_rgb = 0.0
+shader_parameter/intensidad_scanline = 0.0
+
+[node name="Node3D" type="Node2D" unique_id=929844945]
+
+[node name="UI PRINCIPAL" type="CanvasLayer" parent="." unique_id=1187411817]
+
+[node name="FileDialog" type="FileDialog" parent="UI PRINCIPAL" unique_id=1424405589]
+oversampling_override = 1.0
+position = Vector2i(0, 36)
+ok_button_text = "GUARDAR"
+cancel_button_text = "REGRESAR"
+access = 2
+filters = PackedStringArray("*.png")
+use_native_dialog = true
+
+[node name="IMPORT" type="Node" parent="UI PRINCIPAL" unique_id=119872329]
+script = ExtResource("1_2lvdd")
+sprite_scene = ExtResource("2_30qx8")
+objeto_nuevo = ExtResource("3_sx3p0")
+
+[node name="EXPORT" type="Node" parent="UI PRINCIPAL" unique_id=1746248942]
+script = ExtResource("2_didxl")
+
+[node name="import" type="FileDialog" parent="UI PRINCIPAL" unique_id=89845565]
+title = "Open a File"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.png")
+use_native_dialog = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI PRINCIPAL" unique_id=1674341341]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -71.0
+offset_top = 40.0
+offset_right = 71.0
+offset_bottom = 133.0
+grow_horizontal = 2
+
+[node name="etiqueta" type="Label" parent="UI PRINCIPAL/VBoxContainer" unique_id=1530274574]
+layout_mode = 2
+text = "Tamaño del lienzo"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI PRINCIPAL/VBoxContainer" unique_id=694535908]
+layout_mode = 2
+
+[node name="X" type="LineEdit" parent="UI PRINCIPAL/VBoxContainer/HBoxContainer" unique_id=1356166724]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("6_deua1")
+placeholder_text = "size x"
+
+[node name="Y" type="LineEdit" parent="UI PRINCIPAL/VBoxContainer/HBoxContainer" unique_id=1764241227]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("6_deua1")
+placeholder_text = "size y"
+
+[node name="APLICAR" type="Button" parent="UI PRINCIPAL/VBoxContainer" unique_id=1496240431]
+layout_mode = 2
+theme = ExtResource("6_deua1")
+text = "Aplicar cambios"
+
+[node name="modificador_viewport" type="Node" parent="UI PRINCIPAL/VBoxContainer" unique_id=265912148]
+script = ExtResource("3_o3y7d")
+
+[node name="Apilador de objetos" type="VBoxContainer" parent="UI PRINCIPAL" unique_id=1366758984]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -309.0
+offset_top = 40.0
+offset_right = -40.0
+offset_bottom = 133.0
+grow_horizontal = 0
+
+[node name="Panel" type="Panel" parent="UI PRINCIPAL" unique_id=391168442]
+clip_contents = true
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -255.0
+offset_top = -255.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("6_deua1")
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="UI PRINCIPAL/Panel" unique_id=475206284]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="UI PRINCIPAL/Panel/SubViewportContainer2" unique_id=1485750472]
+handle_input_locally = false
+debug_draw = 2
+size = Vector2i(200, 200)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="UI PRINCIPAL/Panel/SubViewportContainer2/SubViewport" unique_id=735090628]
+transform = Transform3D(0.8660254, 0.3213938, -0.38302222, 0, 0.76604444, 0.6427876, 0.5, -0.55667037, 0.66341394, -4, 6, 3)
+
+[node name="Salir_app" type="Button" parent="UI PRINCIPAL" unique_id=924953531]
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 82.0
+offset_bottom = 71.0
+theme = ExtResource("6_deua1")
+text = "Salir de la apicacion"
+
+[node name="Principales" type="Node" parent="UI PRINCIPAL" unique_id=447451030]
+script = ExtResource("7_deua1")
+
+[node name="CAMARA" type="Camera2D" parent="." unique_id=1842119417]
+script = ExtResource("1_cfvru")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1631516006]
+offset_right = 400.0
+offset_bottom = 400.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=70509633]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(400, 400)
+render_target_update_mode = 4
+
+[node name="CAMARA" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=206383373]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+current = true
+
+[node name="SCENE" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1175780857]
+
+[node name="EFECTS CONTAINER" type="CanvasLayer" parent="SubViewportContainer/SubViewport" unique_id=603069568]
+
+[node name="EFECTOS" type="ColorRect" parent="SubViewportContainer/SubViewport/EFECTS CONTAINER" unique_id=1731469146]
+material = SubResource("ShaderMaterial_xtgv7")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="file_selected" from="UI PRINCIPAL/FileDialog" to="UI PRINCIPAL/EXPORT" method="_on_file_dialog_file_selected"]
+[connection signal="file_selected" from="UI PRINCIPAL/import" to="UI PRINCIPAL/IMPORT" method="_on_import_file_selected"]
+[connection signal="pressed" from="UI PRINCIPAL/VBoxContainer/APLICAR" to="UI PRINCIPAL/VBoxContainer/modificador_viewport" method="_on_aplicar_pressed"]
+[connection signal="pressed" from="UI PRINCIPAL/Salir_app" to="UI PRINCIPAL/Principales" method="_on_salir_app_pressed"]

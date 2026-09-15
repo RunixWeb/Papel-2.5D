@@ -1,0 +1,109 @@
+[gd_resource type="Theme" format=3 uid="uid://2oddwrphxrhp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8c7xv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m6sig"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pqpd2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ts4qk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3xno"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_41c0n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2veoj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kirs8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dea62"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62tpf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igasr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q7ygx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fh7ix"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7yvx1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6ke7"]
+
+[sub_resource type="DPITexture" id="DPITexture_vymhw"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"8\"><path fill=\"none\" stroke=\"#fff\" stroke-width=\"2\" d=\"m12 2-4 3.5L4 2\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_8c7xv"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"8\"><path fill=\"none\" stroke=\"#fff\" stroke-width=\"2\" d=\"m4 6 4-3.5L12 6\"/></svg>
+"
+
+[sub_resource type="ImageTexture" id="ImageTexture_m6sig"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ifkix"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5yp6r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ru210"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hypuy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hx0pd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37n6q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ur8q7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12txq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_88r66"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1xxgl"]
+
+[resource]
+Button/styles/disabled = SubResource("StyleBoxFlat_8c7xv")
+Button/styles/disabled_mirrored = SubResource("StyleBoxFlat_m6sig")
+Button/styles/focus = SubResource("StyleBoxFlat_pqpd2")
+Button/styles/hover = SubResource("StyleBoxFlat_ts4qk")
+Button/styles/hover_mirrored = SubResource("StyleBoxFlat_l3xno")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_41c0n")
+Button/styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_2veoj")
+Button/styles/normal = SubResource("StyleBoxFlat_kirs8")
+Button/styles/normal_mirrored = SubResource("StyleBoxFlat_dea62")
+Button/styles/pressed = SubResource("StyleBoxFlat_62tpf")
+Button/styles/pressed_mirrored = SubResource("StyleBoxFlat_igasr")
+LineEdit/styles/focus = SubResource("StyleBoxFlat_q7ygx")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_fh7ix")
+LineEdit/styles/read_only = SubResource("StyleBoxFlat_7yvx1")
+Panel/styles/panel = SubResource("StyleBoxFlat_i6ke7")
+SpinBox/colors/down_disabled_icon_modulate = Color(0.875, 0.875, 0.875, 0.5)
+SpinBox/colors/down_hover_icon_modulate = Color(0.95, 0.95, 0.95, 1)
+SpinBox/colors/down_icon_modulate = Color(0.875, 0.875, 0.875, 1)
+SpinBox/colors/down_pressed_icon_modulate = Color(0.95, 0.95, 0.95, 1)
+SpinBox/colors/up_disabled_icon_modulate = Color(0.875, 0.875, 0.875, 0.5)
+SpinBox/colors/up_hover_icon_modulate = Color(0.95, 0.95, 0.95, 1)
+SpinBox/colors/up_icon_modulate = Color(0.875, 0.875, 0.875, 1)
+SpinBox/colors/up_pressed_icon_modulate = Color(0.95, 0.95, 0.95, 1)
+SpinBox/constants/buttons_vertical_separation = 0
+SpinBox/constants/buttons_width = 16
+SpinBox/constants/field_and_buttons_separation = 2
+SpinBox/constants/set_min_buttons_width_from_icons = 1
+SpinBox/icons/down = SubResource("DPITexture_vymhw")
+SpinBox/icons/down_disabled = SubResource("DPITexture_vymhw")
+SpinBox/icons/down_hover = SubResource("DPITexture_vymhw")
+SpinBox/icons/down_pressed = SubResource("DPITexture_vymhw")
+SpinBox/icons/up = SubResource("DPITexture_8c7xv")
+SpinBox/icons/up_disabled = SubResource("DPITexture_8c7xv")
+SpinBox/icons/up_hover = SubResource("DPITexture_8c7xv")
+SpinBox/icons/up_pressed = SubResource("DPITexture_8c7xv")
+SpinBox/icons/updown = SubResource("ImageTexture_m6sig")
+SpinBox/styles/down_background = SubResource("StyleBoxFlat_ifkix")
+SpinBox/styles/down_background_disabled = SubResource("StyleBoxFlat_5yp6r")
+SpinBox/styles/down_background_hovered = SubResource("StyleBoxFlat_ru210")
+SpinBox/styles/down_background_pressed = SubResource("StyleBoxFlat_hypuy")
+SpinBox/styles/field_and_buttons_separator = SubResource("StyleBoxFlat_hx0pd")
+SpinBox/styles/up_background = SubResource("StyleBoxFlat_37n6q")
+SpinBox/styles/up_background_disabled = SubResource("StyleBoxFlat_ur8q7")
+SpinBox/styles/up_background_hovered = SubResource("StyleBoxFlat_12txq")
+SpinBox/styles/up_background_pressed = SubResource("StyleBoxFlat_88r66")
+SpinBox/styles/up_down_buttons_separator = SubResource("StyleBoxFlat_1xxgl")
