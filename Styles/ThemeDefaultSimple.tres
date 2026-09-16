@@ -86,6 +86,36 @@ _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"8\"><
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1xxgl"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwyhe"]
+bg_color = Color(0.19076231, 0.19076234, 0.19076222, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.044557847, 0.044557862, 0.04455778, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xioox"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.09872835, 0.09872838, 0.09872826, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kdv5m"]
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
 [resource]
 Button/styles/disabled = SubResource("StyleBoxFlat_8c7xv")
 Button/styles/disabled_mirrored = SubResource("StyleBoxFlat_m6sig")
@@ -134,3 +164,6 @@ SpinBox/styles/up_background_disabled = SubResource("StyleBoxFlat_ur8q7")
 SpinBox/styles/up_background_hovered = SubResource("StyleBoxFlat_12txq")
 SpinBox/styles/up_background_pressed = SubResource("StyleBoxFlat_88r66")
 SpinBox/styles/up_down_buttons_separator = SubResource("StyleBoxFlat_1xxgl")
+VirtualJoystick/styles/normal_joystick = SubResource("StyleBoxFlat_nwyhe")
+VirtualJoystick/styles/normal_tip = SubResource("StyleBoxFlat_xioox")
+VirtualJoystick/styles/pressed_joystick = SubResource("StyleBoxFlat_kdv5m")

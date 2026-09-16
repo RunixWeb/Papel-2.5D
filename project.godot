@@ -10,11 +10,12 @@ config_version=5
 
 [application]
 
-config/name="Papel s2.5D"
+config/name="Papel 2.5D"
 config/description="Aplicacion de edicion de imagenes con profundidad 3D"
-config/version="0.0.1.0"
+config/version="0.0.2.0"
 run/main_scene="uid://bqnjqwndne3pp"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+run/low_processor_mode=true
 boot_splash/show_image=false
 boot_splash/stretch_mode=0
 boot_splash/use_filter=false

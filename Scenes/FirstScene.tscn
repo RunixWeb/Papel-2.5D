@@ -8,12 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://oevlc44wxeoi" path="res://Scenes/manipulador_objeto.tscn" id="3_sx3p0"]
 [ext_resource type="Theme" uid="uid://2oddwrphxrhp" path="res://Styles/ThemeDefaultSimple.tres" id="6_deua1"]
 [ext_resource type="Script" uid="uid://cmdnrvg1fjdmv" path="res://Code/principales.gd" id="7_deua1"]
+[ext_resource type="PackedScene" uid="uid://balmicd65solj" path="res://Scenes/Modificador_de_luz_direccional.tscn" id="8_kyrh1"]
 [ext_resource type="Shader" uid="uid://dfyxp8bq2nnao" path="res://Efectos/Efecto0.gdshader" id="9_deua1"]
 [ext_resource type="PackedScene" uid="uid://cqqv78wxif3hh" path="res://Scenes/UIAndroid.tscn" id="10_a8bq1"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_deua1"]
-outline_size = 20
-outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Environment" id="Environment_a8bq1"]
 background_mode = 1
@@ -90,6 +87,10 @@ text = "Aplicar cambios"
 [node name="modificador_viewport" type="Node" parent="UI PRINCIPAL/VBoxContainer" unique_id=265912148]
 script = ExtResource("3_o3y7d")
 
+[node name="CheckBox" type="CheckBox" parent="UI PRINCIPAL/VBoxContainer" unique_id=1546475850]
+layout_mode = 2
+text = "Activar luz y sombras"
+
 [node name="Panel" type="Panel" parent="UI PRINCIPAL" unique_id=391168442]
 clip_contents = true
 anchors_preset = 3
@@ -144,37 +145,6 @@ text = "Salir de la apicacion"
 [node name="Principales" type="Node" parent="UI PRINCIPAL" unique_id=447451030]
 script = ExtResource("7_deua1")
 
-[node name="Consejos" type="VBoxContainer" parent="UI PRINCIPAL" unique_id=34467064]
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -403.0
-offset_top = -38.5
-offset_right = -40.0
-offset_bottom = 38.5
-grow_horizontal = 0
-grow_vertical = 2
-
-[node name="consejo 1" type="Label" parent="UI PRINCIPAL/Consejos" unique_id=50087971]
-layout_mode = 2
-text = "I para importar imagenes"
-label_settings = SubResource("LabelSettings_deua1")
-horizontal_alignment = 1
-
-[node name="consejo 2" type="Label" parent="UI PRINCIPAL/Consejos" unique_id=1957473144]
-layout_mode = 2
-text = "E para exportar imagenes"
-label_settings = SubResource("LabelSettings_deua1")
-horizontal_alignment = 1
-
-[node name="consejo 3" type="Label" parent="UI PRINCIPAL/Consejos" unique_id=835186872]
-layout_mode = 2
-text = "Flechas arriba y abajo para zoom in y zoom out"
-label_settings = SubResource("LabelSettings_deua1")
-horizontal_alignment = 1
-
 [node name="PanelConScroll" type="ScrollContainer" parent="UI PRINCIPAL" unique_id=731350526]
 anchors_preset = 4
 anchor_top = 0.5
@@ -182,12 +152,24 @@ anchor_bottom = 0.5
 offset_left = 40.0
 offset_top = -325.0
 offset_right = 340.0
-offset_bottom = 325.0
+offset_bottom = 125.0
 grow_vertical = 2
 theme = ExtResource("6_deua1")
 
 [node name="Apilador de objetos" type="VBoxContainer" parent="UI PRINCIPAL/PanelConScroll" unique_id=1366758984]
 layout_mode = 2
+
+[node name="VBoxContainer2" parent="UI PRINCIPAL" unique_id=227732972 node_paths=PackedStringArray("luz_direccional") instance=ExtResource("8_kyrh1")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -218.0
+offset_top = 80.0
+offset_right = -40.0
+offset_bottom = 120.0
+grow_horizontal = 0
+theme = ExtResource("6_deua1")
+luz_direccional = NodePath("../../SubViewportContainer/SubViewport/SCENE/DirectionalLight3D")
 
 [node name="CAMARA" type="Camera2D" parent="." unique_id=1842119417]
 script = ExtResource("1_cfvru")
@@ -209,6 +191,11 @@ current = true
 
 [node name="SCENE" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1175780857]
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/SCENE" unique_id=700448945]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+shadow_reverse_cull_face = true
+directional_shadow_blend_splits = true
+
 [node name="EFECTS CONTAINER" type="CanvasLayer" parent="SubViewportContainer/SubViewport" unique_id=603069568]
 
 [node name="EFECTOS" type="ColorRect" parent="SubViewportContainer/SubViewport/EFECTS CONTAINER" unique_id=1731469146]
@@ -224,4 +211,5 @@ grow_vertical = 2
 [connection signal="file_selected" from="UI PRINCIPAL/FileDialog" to="UI PRINCIPAL/EXPORT" method="_on_file_dialog_file_selected"]
 [connection signal="file_selected" from="UI PRINCIPAL/import" to="UI PRINCIPAL/IMPORT" method="_on_import_file_selected"]
 [connection signal="pressed" from="UI PRINCIPAL/VBoxContainer/APLICAR" to="UI PRINCIPAL/VBoxContainer/modificador_viewport" method="_on_aplicar_pressed"]
+[connection signal="pressed" from="UI PRINCIPAL/VBoxContainer/CheckBox" to="UI PRINCIPAL/Principales" method="_on_check_box_pressed"]
 [connection signal="pressed" from="UI PRINCIPAL/Salir_app" to="UI PRINCIPAL/Principales" method="_on_salir_app_pressed"]

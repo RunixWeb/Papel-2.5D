@@ -8,10 +8,9 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_wnf35")
 
-[node name="Nombre_objeto" type="Label" parent="." unique_id=264274626]
+[node name="Nombre" type="LineEdit" parent="." unique_id=1907893155]
 layout_mode = 2
-text = "Objeto"
-horizontal_alignment = 1
+theme = ExtResource("2_8c7xv")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1333878522]
 layout_mode = 2
@@ -67,14 +66,27 @@ allow_greater = true
 allow_lesser = true
 prefix = "rz"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1858284118]
+[node name="HBoxContainer4" type="HBoxContainer" parent="." unique_id=988363698]
 layout_mode = 2
 
-[node name="aplicar" type="Button" parent="HBoxContainer2" unique_id=1194187064]
+[node name="scale_x" type="SpinBox" parent="HBoxContainer4" unique_id=1055571824]
 layout_mode = 2
-size_flags_horizontal = 3
 theme = ExtResource("2_8c7xv")
-text = "Aplicar cambios"
+step = 0.1
+allow_greater = true
+allow_lesser = true
+prefix = "sx"
+
+[node name="scale_y" type="SpinBox" parent="HBoxContainer4" unique_id=1928791976]
+layout_mode = 2
+theme = ExtResource("2_8c7xv")
+step = 0.1
+allow_greater = true
+allow_lesser = true
+prefix = "sy"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1858284118]
+layout_mode = 2
 
 [node name="eliminar" type="Button" parent="HBoxContainer2" unique_id=1590286606]
 layout_mode = 2
@@ -82,5 +94,12 @@ size_flags_horizontal = 3
 theme = ExtResource("2_8c7xv")
 text = "Eliminar objeto"
 
-[connection signal="pressed" from="HBoxContainer2/aplicar" to="." method="_on_aplicar_pressed"]
+[connection signal="value_changed" from="HBoxContainer/modificador_x" to="." method="_on_modificador_x_value_changed"]
+[connection signal="value_changed" from="HBoxContainer/modificador_y" to="." method="_on_modificador_y_value_changed"]
+[connection signal="value_changed" from="HBoxContainer/modificador_z" to="." method="_on_modificador_z_value_changed"]
+[connection signal="value_changed" from="HBoxContainer3/rotacion_x" to="." method="_on_rotacion_x_value_changed"]
+[connection signal="value_changed" from="HBoxContainer3/rotacion_y" to="." method="_on_rotacion_y_value_changed"]
+[connection signal="value_changed" from="HBoxContainer3/rotacion_z" to="." method="_on_rotacion_z_value_changed"]
+[connection signal="value_changed" from="HBoxContainer4/scale_x" to="." method="_on_scale_x_value_changed"]
+[connection signal="value_changed" from="HBoxContainer4/scale_y" to="." method="_on_scale_y_value_changed"]
 [connection signal="pressed" from="HBoxContainer2/eliminar" to="." method="_on_eliminar_pressed"]

@@ -1,4 +1,6 @@
 [gd_scene format=3 uid="uid://d3gx4mm52xb2t"]
 
 [node name="Sprite3D" type="Sprite3D" unique_id=1345968037]
+shaded = true
+alpha_cut = 2
 texture_filter = 0
